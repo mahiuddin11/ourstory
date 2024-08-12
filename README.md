@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
     <link href="{{ asset('cssfontend') }}../../css.css?family=Muli:300,400,700|Playfair+Display:400,700,900"
         rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('cssfontend') }}/fonts/icomoon/style.css">
@@ -23,7 +22,7 @@
                              <div class="bio text-center">
                                  <img src="{{asset('cssfontend')}}/images/samad.jpeg" alt="Image Placeholder" class="img-fluid mb-5">
                                  <div class="bio-body">
-                                     <h2>Craig David</h2>
+                                     <h2>Md MahiUddin Samad </h2>
                                      <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                                          Exercitationem facilis sunt repellendus excepturi beatae porro debitis
                                          voluptate nulla quo veniam fuga sit molestias minus.</p>
