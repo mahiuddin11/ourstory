@@ -20,3 +20,10 @@ Route::get('/', function () {
 Route::get('home', function () {
     return view('fontend.page.home');
 });
+Route::get('post', function () {
+    return view('fontend.page.post');
+});
+
+Route::get('category', function () {
+    return view('fontend.page.category');
+});
