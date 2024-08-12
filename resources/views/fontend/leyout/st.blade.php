@@ -10,3 +10,4 @@
 
 </body>
 </html>
+<img src="http://127.0.0.1:8000/cssfontend/images/samad.jpeg" alt="Image Placeholder" class="img-fluid mb-5">

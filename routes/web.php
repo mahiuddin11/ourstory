@@ -27,3 +27,12 @@ Route::get('post', function () {
 Route::get('category', function () {
     return view('fontend.page.category');
 });
+
+Route::get('about', function () {
+    return view('fontend.page.about');
+});
+
+Route::get('contact', function () {
+    return view('fontend.page.contact');
+
+});
