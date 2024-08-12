@@ -237,7 +237,7 @@ style="background-image: url('{{asset('cssfontend')}}/images/img_2.jpg');">
                          <!-- END sidebar-box -->
                          <div class="sidebar-box">
                              <div class="bio text-center">
-                                 <img src="{{asset('cssfontend')}}/images/person_2.jpg" alt="Image Placeholder" class="img-fluid mb-5">
+                                 <img src="{{asset('cssfontend')}}/images/samad.jpeg" alt="Image Placeholder" class="img-fluid mb-5">
                                  <div class="bio-body">
                                      <h2>Craig David</h2>
                                      <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -392,6 +392,7 @@ style="background-image: url('{{asset('cssfontend')}}/images/img_2.jpg');">
                 </div>
          </div>
 
-
+<img src="{{ asset('cssfontend') }}/images/samad.jpeg" alt="Image"
+                                class="img-fluid rounded">
 
          @endsection
