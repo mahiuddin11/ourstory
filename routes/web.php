@@ -36,3 +36,15 @@ Route::get('contact', function () {
     return view('fontend.page.contact');
 
 });
+
+Route::get('team', function () {
+    return view('fontend.page.team');
+});
+
+Route::get('admin', function () {
+    return view('Admin.master');
+});
+
+Route::get('deshbord', function () {
+    return view('Admin.partial.deshbord');
+});
