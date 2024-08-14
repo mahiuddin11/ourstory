@@ -1,8 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CatagoryController;
+use App\Models\Catagory;
 
-/*
+/*/
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -45,6 +47,13 @@ Route::get('admin', function () {
     return view('Admin.master');
 });
 
-Route::get('deshbord', function () {
-    return view('Admin.partial.deshbord');
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('/dashboard', function () {
+        return view('Admin.partial.deshbord');
+    });
+
+    //admin catagorys route file
+    Route::get('catagory',[CatagoryController::class,'index'])->name('catagory');
 });
