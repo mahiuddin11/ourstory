@@ -47,12 +47,16 @@ Route::get('admin', function () {
     return view('Admin.master');
 });
 
+Route::group(['prefix' => 'admin'],function (){
+        Route::get('deshboard',function(){
+            return view('Admin.partial.deshbord');
+        })->name('deshboard');
+});
+
 
 
 Route::group(['prefix' => 'admin'], function () {
-    Route::get('/dashboard', function () {
-        return view('Admin.partial.deshbord');
-    });
+
 
     //admin catagorys route file
     Route::get('catagory',[CatagoryController::class,'index'])->name('catagory');
