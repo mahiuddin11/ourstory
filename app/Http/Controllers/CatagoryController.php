@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Catagory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class CatagoryController extends Controller
 {
@@ -15,12 +16,13 @@ class CatagoryController extends Controller
         return view('Admin.partial.catagorypage.catagory');
     }
 
+
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        return view('Admin.partial.catagorypage.catagoryadd');
     }
 
     /**
@@ -28,7 +30,21 @@ class CatagoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
+        $this->validate($request,[
+
+            'CatagoryName' => 'required|unique:catagories,CatagoryName',
+        ]);
+
+        $catagory = Catagory::create([
+
+            'CatagoryName' => $request->CatagoryName,
+            'slug' => Str::slug($request->CatagoryName, '-'),
+            'discaption' => $request->discaption,
+        ]);
+
+
+        return redirect()->back();
     }
 
     /**

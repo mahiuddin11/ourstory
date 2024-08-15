@@ -27,7 +27,7 @@
                     <div class="card-header">
                         <div class="d-flex justify-content-between align-items-center">
                             <h3 class="card-title">Category List</h3>
-                            <a href="#" class="btn btn-primary">Create Category</a>
+                            <a href="{{Route('catagory-create-page')}}" class="btn btn-primary">Create Category</a>
                         </div>
                     </div>
                     <!-- /.card-header -->
@@ -60,14 +60,12 @@
                                             {{-- <a href="{{ route('category.show', [$category->id]) }}" class="btn btn-sm btn-success mr-1"> <i class="fas fa-eye"></i> </a> --}}
                                         </td>
                                     </tr>
-                                    
+
                                     {{-- <tr>
                                         <td colspan="5">
                                             <h5 class="text-center">No categories found.</h5>
                                         </td>
                                     </tr> --}}
-
-
                             </tbody>
                         </table>
                     </div>

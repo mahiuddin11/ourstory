@@ -16,7 +16,7 @@ use App\Models\Catagory;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('fontend.page.home');
 });
 
 Route::get('home', function () {
@@ -43,9 +43,7 @@ Route::get('team', function () {
     return view('fontend.page.team');
 });
 
-Route::get('admin', function () {
-    return view('Admin.master');
-});
+
 
 Route::group(['prefix' => 'admin'],function (){
         Route::get('deshboard',function(){
@@ -60,4 +58,7 @@ Route::group(['prefix' => 'admin'], function () {
 
     //admin catagorys route file
     Route::get('catagory',[CatagoryController::class,'index'])->name('catagory');
+    Route::get('catagory-crate-page',[CatagoryController::class, 'create'])->name('catagory-create-page');
+
+    Route::post('catagory-stor',[CatagoryController::class,'store'])->name('catagory-store');
 });
