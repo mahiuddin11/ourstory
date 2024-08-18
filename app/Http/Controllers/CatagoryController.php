@@ -13,7 +13,9 @@ class CatagoryController extends Controller
      */
     public function index()
     {
-        return view('Admin.partial.catagorypage.catagory');
+        $catagories = Catagory::orderBy('created_at', 'DESC')->paginate(10);
+
+        return view('Admin.partial.catagorypage.catagory', compact('catagories'));
     }
 
 
@@ -31,7 +33,7 @@ class CatagoryController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
-        $this->validate($request,[
+        $this->validate($request, [
 
             'CatagoryName' => 'required|unique:catagories,CatagoryName',
         ]);
@@ -53,6 +55,7 @@ class CatagoryController extends Controller
     public function show(Catagory $catagory)
     {
         //
+        return view('Admin.partial.catagorypage.catagoryShow', compact('catagory'));
     }
 
     /**
@@ -61,6 +64,7 @@ class CatagoryController extends Controller
     public function edit(Catagory $catagory)
     {
         //
+        return view('Admin.partial.catagorypage.catagoryEdit', compact('catagory'));
     }
 
     /**
@@ -68,7 +72,22 @@ class CatagoryController extends Controller
      */
     public function update(Request $request, Catagory $catagory)
     {
-        //
+        // Validate the request data
+        $this->validate($request, [
+            'CatagoryName' => "required|unique:catagories,CatagoryName,$catagory->id"
+        ]);
+
+
+
+        $catagory->CatagoryName = $request->CatagoryName;
+        $catagory->slug = Str::slug($request->CatagoryName, '-');
+        $catagory->discaption = $request->discaption;
+
+        $catagory->save();
+
+        // Success message
+        toastr()->success('Category updated successfully!');
+        return redirect()->back();
     }
 
     /**
@@ -76,6 +95,10 @@ class CatagoryController extends Controller
      */
     public function destroy(Catagory $catagory)
     {
-        //
+        $catagory->delete();
+
+
+        toastr()->error('Category deleted successfully!');
+        return redirect()->route('catagory');
     }
 }

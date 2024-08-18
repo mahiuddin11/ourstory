@@ -59,6 +59,11 @@ Route::group(['prefix' => 'admin'], function () {
     //admin catagorys route file
     Route::get('catagory',[CatagoryController::class,'index'])->name('catagory');
     Route::get('catagory-crate-page',[CatagoryController::class, 'create'])->name('catagory-create-page');
-
     Route::post('catagory-stor',[CatagoryController::class,'store'])->name('catagory-store');
+    Route::get('catagories/{catagory}/edit', [CatagoryController::class, 'edit'])->name('catagories.edit');
+    Route::get('catagories/{catagory}/show', [CatagoryController::class, 'show'])->name('catagories.show');
+    Route::resource('catagories', CatagoryController::class);
+    // Route::put('/admin/catagory-update/{catagory}', [CatagoryController::class, 'update'])->name('catagories.update');
+
+    Route::get('catagory-delete',[CatagoryController::class, 'destroy'])->name('catagory.delete');
 });

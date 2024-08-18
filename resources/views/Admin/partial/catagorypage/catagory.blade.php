@@ -19,63 +19,69 @@
     </div>
 
     <!-- Main content -->
-<div class="content">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="card">
-                    <div class="card-header">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <h3 class="card-title">Category List</h3>
-                            <a href="{{Route('catagory-create-page')}}" class="btn btn-primary">Create Category</a>
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h3 class="card-title">Category List</h3>
+                                <a href="{{ Route('catagory-create-page') }}" class="btn btn-primary">Create Category</a>
+                            </div>
                         </div>
-                    </div>
-                    <!-- /.card-header -->
-                    <div class="card-body p-0">
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th style="width: 10px">#</th>
-                                    <th>Name</th>
-                                    <th>Slug</th>
-                                    <th>Post Counnt</th>
-                                    <th style="width: 40px">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-
+                        <!-- /.card-header -->
+                        <div class="card-body p-0">
+                            <table class="table table-striped">
+                                <thead>
                                     <tr>
-                                        <td>1</td>
-                                        <td>Mobile</td>
-                                        <td>sing</td>
-                                        <td>
-                                           1
-                                        </td>
-                                        <td class="d-flex">
-                                            <a href="#" class="btn btn-sm btn-primary mr-1"> <i class="fas fa-edit"></i> </a>
-                                            <form action="#" class="mr-1" method="POST">
-
-                                                <button type="submit" class="btn btn-sm btn-danger"> <i class="fas fa-trash"></i> </button>
-                                            </form>
-                                            {{-- <a href="{{ route('category.show', [$category->id]) }}" class="btn btn-sm btn-success mr-1"> <i class="fas fa-eye"></i> </a> --}}
-                                        </td>
+                                        <th style="width: 10px">#</th>
+                                        <th>Name</th>
+                                        <th>Slug</th>
+                                        <th>Post Counnt</th>
+                                        <th style="width: 40px">Action</th>
                                     </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($catagories as $catagory)
+                                        <tr>
 
-                                    {{-- <tr>
-                                        <td colspan="5">
-                                            <h5 class="text-center">No categories found.</h5>
-                                        </td>
-                                    </tr> --}}
-                            </tbody>
-                        </table>
-                    </div>
-                    <!-- /.card-body -->
-                    {{-- <div class="card-footer d-flex justify-content-center">
+                                            <td>{{ $catagory->id }}</td>
+                                            <td>{{ $catagory->CatagoryName }}</td>
+                                            <td>{{ $catagory->slug }}</td>
+                                            <td>
+                                                {{ $catagory->id }}
+                                            </td>
+                                            <td class="d-flex">
+                                                <a href="{{ Route('catagories.show', [$catagory->id]) }}"
+                                                    class="btn btn-sm btn-success mr-1"> <i class="fas fa-eye"></i> </a>
+                                                <a href="{{ Route('catagories.edit', [$catagory->id]) }}"
+                                                    class="btn btn-sm btn-primary mr-1"> <i class="fas fa-edit"></i> </a>
+
+                                                <form action="{{ route('catagories.destroy', $catagory->id) }}"
+                                                    method="POST"
+                                                    onsubmit="return confirm('Are you sure you want to delete this category?');">
+                                                    @csrf
+                                                    @method('DELETE')
+
+                                                    <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                                                </form>
+
+                                            </td>
+
+                                        </tr>
+                                    @endforeach
+                                  
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                        {{-- <div class="card-footer d-flex justify-content-center">
                         link
                     </div> --}}
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection
