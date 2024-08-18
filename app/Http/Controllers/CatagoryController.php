@@ -43,7 +43,7 @@ class CatagoryController extends Controller
             'discaption' => $request->discaption,
         ]);
 
-
+        toastr()->success('Data has been saved successfully!');
         return redirect()->back();
     }
 
