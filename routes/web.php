@@ -1,8 +1,10 @@
 <?php
 
+use App\Models\Catagory;
+use App\Models\Tag;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CatagoryController;
-use App\Models\Catagory;
+use App\Http\Controllers\TagController;
 
 /*/
 |--------------------------------------------------------------------------
@@ -66,4 +68,16 @@ Route::group(['prefix' => 'admin'], function () {
     // Route::put('/admin/catagory-update/{catagory}', [CatagoryController::class, 'update'])->name('catagories.update');
 
     Route::get('catagory-delete',[CatagoryController::class, 'destroy'])->name('catagory.delete');
+
+
+    // tag inpute all route
+
+
+    Route::get('tag', [TagController::class, 'index'])->name('tag');
+    Route::get('tag-crate-page', [TagController::class, 'create'])->name('tag-create-page');
+    Route::post('tag-stor', [TagController::class, 'store'])->name('tag-store');
+    Route::get('tag/{tag}/edit', [TagController::class, 'edit'])->name('tag.edit');
+    Route::get('tag/{tag}/show', [TagController::class, 'show'])->name('tag.show');
+    Route::resource('catagories', TagController::class);
+    Route::get('tag-delete', [TagController::class, 'destroy'])->name('tag.delete');
 });

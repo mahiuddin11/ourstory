@@ -32,11 +32,27 @@
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                          <a class="collapse-item" href="{{ Route('catagory-create-page')}}">Add Catagory</a>
+                        <a class="collapse-item" href="{{ Route('catagory-create-page')}}">Add Catagory</a>
                         <a class="collapse-item" href="{{Route('catagory')}}">Catagory List</a>
                     </div>
                 </div>
             </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#tagmenu"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fa-solid fa-tag"></i>
+                    <span>Tag</span>
+                </a>
+                <div id="tagmenu" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{route('tag-create-page')}}">Add Tag</a>
+                        <a class="collapse-item" href="{{route('tag')}}">Tag List</a>
+                    </div>
+                </div>
+            </li>
+
 
 
 
