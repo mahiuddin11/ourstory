@@ -27,20 +27,20 @@
                         <div class="card-header">
                             <div class="d-flex justify-content-between align-items-center">
                                 <h3 class="card-title">Tag</h3>
-                                <a href="{{Route('tag')}}" class="btn btn-danger">Back</a>
+                                <a href="{{route('tag.index')}}" class="btn btn-danger">Back</a>
                             </div>
                         </div>
 
                         <div class="row ">
                             <div class=" col-lg-12 ">
-                                <form action="{{ Route('tag-store')}}" method="POST" enctype="multipart/form-data"  >
+                                <form action="{{route('tag.store')}}" method="POST" enctype="multipart/form-data"  >
                                     @csrf
 
                                         @include('Admin.component.errror')<!--  // The tag name field is required. -->
 
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Tag Name</label>
-                                            <input type="text" name="tagname" class="form-control" id="exampleInputEmail1"
+                                            <input type="text" name="name" class="form-control" id="exampleInputEmail1"
                                                 placeholder="tag name">
                                         </div>
                                         {{-- <div class="form-group">

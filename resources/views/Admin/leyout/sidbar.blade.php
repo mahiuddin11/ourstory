@@ -47,8 +47,8 @@
                 </a>
                 <div id="tagmenu" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="{{route('tag-create-page')}}">Add Tag</a>
-                        <a class="collapse-item" href="{{route('tag')}}">Tag List</a>
+                        <a class="collapse-item" href="{{route('tag.create')}}">Add Tag</a>
+                        <a class="collapse-item" href="{{route('tag.index')}}">Tag List</a>
                     </div>
                 </div>
             </li>

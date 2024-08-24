@@ -27,7 +27,7 @@
                         <div class="card-header">
                             <div class="d-flex justify-content-between align-items-center">
                                 <h3 class="card-title">Tag List</h3>
-                                <a href="{{ Route('tag-create-page') }}" class="btn btn-primary">Create Tag</a>
+                                <a href="{{route('tag.create')}}" class="btn btn-primary">Create Tag</a>
                             </div>
                         </div>
                         <!-- /.card-header -->
@@ -46,18 +46,18 @@
                                     @foreach ($tags as $tag)
                                         <tr>
                                             <td>{{ $tag->id }}</td>
-                                            <td>{{ $tag->tagName }}</td>
+                                            <td>{{ $tag->name }}</td>
                                             <td>{{ $tag->slug }}</td>
                                             <td>
                                                 {{ $tag->id }}
                                             </td>
                                             <td class="d-flex">
-                                                <a href="{{ Route('tags.show', [$tag->id]) }}"
+                                                <a href="{{ Route('tag.show', [$tag->id]) }}"
                                                     class="btn btn-sm btn-success mr-1"> <i class="fas fa-eye"></i> </a>
-                                                <a href="{{ Route('tags.edit', [$tag->id]) }}"
+                                                <a href="{{route('tag.edit',[$tag->id] )}}"
                                                     class="btn btn-sm btn-primary mr-1"> <i class="fas fa-edit"></i> </a>
 
-                                                <form action="{{ route('tags.destroy', $tag->id) }}"
+                                                <form action="{{ route('tag.destroy', $tag->id) }}"
                                                     method="POST"
                                                     onsubmit="return confirm('Are you sure you want to delete this tag?');">
                                                     @csrf

@@ -38,7 +38,6 @@ Route::get('about', function () {
 
 Route::get('contact', function () {
     return view('fontend.page.contact');
-
 });
 
 Route::get('team', function () {
@@ -47,10 +46,10 @@ Route::get('team', function () {
 
 
 
-Route::group(['prefix' => 'admin'],function (){
-        Route::get('deshboard',function(){
-            return view('Admin.partial.deshbord');
-        })->name('deshboard');
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('deshboard', function () {
+        return view('Admin.partial.deshbord');
+    })->name('deshboard');
 });
 
 
@@ -58,7 +57,9 @@ Route::group(['prefix' => 'admin'],function (){
 Route::group(['prefix' => 'admin'], function () {
 
 
-    //admin catagorys route file
+
+
+    // //admin catagorys route file
     Route::get('catagory',[CatagoryController::class,'index'])->name('catagory');
     Route::get('catagory-crate-page',[CatagoryController::class, 'create'])->name('catagory-create-page');
     Route::post('catagory-stor',[CatagoryController::class,'store'])->name('catagory-store');
@@ -72,12 +73,8 @@ Route::group(['prefix' => 'admin'], function () {
 
     // tag inpute all route
 
+    Route::resource('tag', tagController::class);
 
-    Route::get('tag', [TagController::class, 'index'])->name('tag');
-    Route::get('tag-crate-page', [TagController::class, 'create'])->name('tag-create-page');
-    Route::post('tag-stor', [TagController::class, 'store'])->name('tag-store');
-    Route::get('tag/{tag}/edit', [TagController::class, 'edit'])->name('tag.edit');
-    Route::get('tag/{tag}/show', [TagController::class, 'show'])->name('tag.show');
-    Route::resource('catagories', TagController::class);
-    Route::get('tag-delete', [TagController::class, 'destroy'])->name('tag.delete');
+
+
 });

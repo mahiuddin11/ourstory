@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title> Dashboard</title>
+    <title>Blog->Admin</title>
 
     <link href="{{asset('admincss')}}/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <!-- Custom fonts for this template-->

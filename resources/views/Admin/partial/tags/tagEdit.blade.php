@@ -6,12 +6,12 @@
         <div class=" container-fluid">
             <div class=" row mb-1 justify-between">
                 <div class="col-sm-6">
-                    <h5 class="m-0 text-dark">Tag</h5>
+                    <h5 class="m-0 text-dark">Tags</h5>
                 </div>
                 <div class="col-sm-6">
                     <ol class=" breadcrumb float-sm-right">
                         <li class=" breadcrumb-item"><a href="#">home</a></li>
-                        <li class=" breadcrumb-item active">Tag edit</li>
+                        <li class=" breadcrumb-item active">Tag Edit</li>
                     </ol>
                 </div>
             </div>
@@ -27,21 +27,21 @@
                         <div class="card-header">
                             <div class="d-flex justify-content-between align-items-center">
                                 <h3 class="card-title">Edit Tag</h3>
-                                <a href="{{Route('tag')}}" class="btn btn-danger">Back</a>
+                                <a href="{{Route('tag.index')}}" class="btn btn-danger">Back</a>
                             </div>
                         </div>
 
                         <div class="row ">
                             <div class=" col-lg-12 ">
-                                <form action="{{ Route('tags.update',[$tag->id])}}" method="POST" enctype="multipart/form-data"  >
+                                <form action="{{ Route('tag.update',[$tag->id])}}" method="POST" enctype="multipart/form-data"  >
                                     @csrf
-                                        @method('PUT')
+                                         @method('PUT')
                                         @include('Admin.component.errror')<!--  // The tag name field is required. -->
 
                                         <input type="hidden" name="id" value="{{$tag->id}}">
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Tag Name</label>
-                                            <input type="text" name="tagname" class="form-control" value="{{$tag->tagname}}"
+                                            <input type="text" name="name" class="form-control" value="{{$tag->name}}"
                                                 placeholder="tag name">
                                         </div>
                                         {{-- <div class="form-group">
