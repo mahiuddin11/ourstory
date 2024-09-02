@@ -2,9 +2,13 @@
 
 use App\Models\Catagory;
 use App\Models\Tag;
+use App\Models\Post;
+use App\Models\Status;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CatagoryController;
 use App\Http\Controllers\TagController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\StatusController;
 
 /*/
 |--------------------------------------------------------------------------
@@ -74,6 +78,12 @@ Route::group(['prefix' => 'admin'], function () {
     // tag inpute all route
 
     Route::resource('tag', tagController::class);
+
+    //post all route 
+    Route::resource('post',PostController::class);
+
+    // status all route 
+    Route::resource('status',StatusController::class);
 
 
 

@@ -53,6 +53,35 @@
                 </div>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#statusmenu"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fa-solid fa-status"></i>
+                    <span>Status</span>
+                </a>
+                <div id="statusmenu" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{route('status.create')}}">Add status</a>
+                        <a class="collapse-item" href="{{route('status.index')}}">status List</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#post"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fa-solid fa-tag"></i>
+                    <span>post</span>
+                </a>
+                <div id="post" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{route('post.create')}}">Add post</a>
+                        <a class="collapse-item" href="{{route('post.index')}}">post List</a>
+                    </div>
+                </div>
+            </li>
+
+
 
 
 
